@@ -1,0 +1,15 @@
+<form [formGroup]="wellForm" (ngSubmit)="submitForm(wellForm.value)">
+    <div class="form-group">
+        <label for="fname"> Name </label>
+        <input type="text" id="fname" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="type"> Type </label>
+        <input type="text" id="type" formControlName="type">
+    </div>
+    <div class="form-group">
+        <label for="source"> Source Key </label>
+        <input type="number" id="sorce" formControlName="source" disabled>
+    </div>
+    <button type="submit">Add Well </button>
+</form>

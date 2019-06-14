@@ -1,0 +1,28 @@
+<app-well (output) = "parentMethod($event)"> </app-well>
+
+<div class="container well"> 
+  <table class="table table-light table-hover table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th> Name </th>
+        <th> Type</th>
+        <th>Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let well of wells" [ngStyle]="{
+        'color' : well.type != 'MS' ? 'red' : 'black',
+        'font-weight' : well.type == 'cs' ? 'bold' : 'normal'
+        }">
+
+        <td>{{well.name}}</td>
+        <td [class.bg-green]="well.type == 'Dev'" [style.color]="well.type == 'Dev' ? 'red' : 'black'">
+          {{well.type}}
+        </td>
+        <td>
+          {{well.source}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
