@@ -1,15 +1,24 @@
-<form [formGroup]="wellForm" (ngSubmit)="submitForm(wellForm.value)">
-    <div class="form-group">
-        <label for="fname"> Name </label>
-        <input type="text" id="fname" formControlName="name">
+<div class="container"> 
+<div class="row">
+    <div class="col-sm-8 card card-body ">
+            <form class="form" [formGroup]="wellForm" (ngSubmit)="submitForm(wellForm.value)">
+                    <div class="form-group">
+                        <label for="fname"> <strong>Name</strong> </label>
+                        <input type="text" id="fname"  class="form-control" formControlName="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="type"> <strong>Type</strong> </label>
+                        <input type="text" id="type"  class="form-control" formControlName="type">
+                    </div>
+                    <div class="form-group">
+                        <label for="source"> <Strong>Source Key</Strong> </label>
+                        <input type="number" id="sorce"  class="form-control" formControlName="source"  disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Well </button>
+                </form>
     </div>
-    <div class="form-group">
-        <label for="type"> Type </label>
-        <input type="text" id="type" formControlName="type">
+    <div class="col-sm-4 align-self-center">
+        <h3 class="color-red"> Child Component</h3>
     </div>
-    <div class="form-group">
-        <label for="source"> Source Key </label>
-        <input type="number" id="sorce" formControlName="source" disabled>
-    </div>
-    <button type="submit">Add Well </button>
-</form>
+</div>
+</div>
